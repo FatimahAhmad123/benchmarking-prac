@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(unitTesting)
+project(benchmarking)
 
 add_library(project_lib STATIC
 	student.cpp
