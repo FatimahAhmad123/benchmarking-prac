@@ -9,7 +9,8 @@ set(BENCHMARK_ENABLE_GTEST_TESTS OFF CACHE BOOL "Enable testing of the benchmark
 set(BENCHMARK_SUBMODULE_BINARY_DIR ${CMAKE_BINARY_DIR}/thirdparty/benchmark)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/thirdparty/benchmark ${BENCHMARK_SUBMODULE_BINARY_DIR})
+add_subdirectory(${CMAKE_SOURCE_DIR}/thirdparty/googletest ${BENCHMARK_SUBMODULE_BINARY_DIR}/googletest)
 
-add_executable(benchmarks_executable main.cpp)
+add_executable(benchmarks_executable benchmarking_main.cpp benchmarking.hpp)
 
 target_link_libraries(benchmarks_executable PRIVATE project_lib benchmark::benchmark)
